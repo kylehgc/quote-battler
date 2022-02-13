@@ -11,6 +11,10 @@
     "@testing-library/user-event": "^12.8.3",
     "framer-motion": "^4.1.17",
     "react": "^17.0.2",
+    "react-dnd": "^15.1.1",
+    "react-dnd-html5-backend": "^15.1.2",
+    "react-dnd-preview": "^6.0.2",
+    "react-dnd-touch-backend": "^15.1.1",
     "react-dom": "^17.0.2",
     "react-icons": "^3.11.0",
     "react-scripts": "5.0.0",
@@ -25,7 +29,10 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "indent": [2,2]
+      "indent": [
+        2,
+        2
+      ]
     }
   },
   "browserslist": {
