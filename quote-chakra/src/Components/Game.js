@@ -1,4 +1,4 @@
-import {Center, Flex, Spinner} from '@chakra-ui/react'
+import {Center, Flex, Spinner, Heading, Box} from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
 import { useEffect,useReducer,useState } from 'react'
@@ -17,6 +17,13 @@ const gameDataReducer = (state,action) => {
       loading: false,
       error: null
     }
+  } else if (action.type === 'newQuote') {
+    
+    return {
+      ...state,
+      loading: true
+      
+    }     
   } else if (action.type === 'error') {
     return {
       ...state,
@@ -25,53 +32,56 @@ const gameDataReducer = (state,action) => {
   }
 }
 const initialState = {
-  realQuote: null,
-  fakeQuote: null,
+  realQuote: {},
+  fakeQuote: {},
   loading: true,
+  over: false,
   error: null
 }
 const Game = () => {
-  const [quoteState, quoteDispatch] = useReducer(gameDataReducer, initialState)
+  const [gameState, gameDispatch] = useReducer(gameDataReducer, initialState)
   const [quoteChoice, setQuoteChoice] = useState(null)
   const [didWin, setDidWin] = useState(false)
 
   useEffect(() => {
     
     if(quoteChoice) {
-      const {author} = quoteState.realQuote
+      const {author} = gameState.realQuote
       setDidWin(quoteChoice === author) 
-    }
+      gameDispatch({type: 'newQuote'})
+    } 
   },[quoteChoice])
 
   useEffect(() => {
+
     const getData = async () => {
       try {
         const data = await getGameData()
-        quoteDispatch({type: 'success', data: data})
+        gameDispatch({type: 'success', data: data})
       } catch (error) {
-        quoteDispatch({type: 'error', error: error})
+        gameDispatch({type: 'error', error: error})
       }
     }
-    getData()
-  },[])
+    if(gameState.loading) { 
+      getData()
+    }
+  },[gameState.loading])
 
-  const {loading, realQuote, fakeQuote} = quoteState
-  if(loading) {
-    return <Center><Spinner size={'xl'}/></Center>
-  }
+  const {loading, realQuote, fakeQuote} = gameState
+  
   const authors = [realQuote.author,fakeQuote.author]
   const randomAuthors = randomizeAuthors(authors)
-  
   return (
-    <Flex height={'100vh'} width={'100vw'} bg={'teal'} alignItems={'center'} justifyContent={'center'}>
-      {quoteChoice 
-        ? <Center  fontSize={40}>{didWin.toString().toUpperCase()}</Center>
-        : 
-        <GameBoard 
+    <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
+      <Center id='test' textAlign='center' height='30vh' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
+      {loading    
+        ? <Center height='100%'> <Spinner size={'xl'}/></Center>
+
+        : <GameBoard 
           setQuoteChoice={setQuoteChoice}
           quote={realQuote.text} 
           realAuthor={randomAuthors[0]} 
-          fakeAuthor={randomAuthors[1]} />}
+          fakeAuthor={randomAuthors[1]} /> }
     </Flex>
   )
 }

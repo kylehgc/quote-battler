@@ -1,4 +1,4 @@
-import {Flex} from '@chakra-ui/react'
+import {Flex, Center } from '@chakra-ui/react'
 import QuoteBox from './QuoteBox'
 import AuthorBox from './AuthorBox'
 import { DndProvider } from 'react-dnd'
@@ -7,11 +7,11 @@ import Preview from './TouchPreview'
 
 
 const boxStyles = {
-  m: 4,
+  m: 5,
   color:'whiteAlpha.700',
   bg: "blue",
-  width: "40vw",
-  fontSize: "3vw",  
+  width: {base: '65vw', lg: '30vw'},
+  fontSize: {base: '4vw', lg: '3vw', xl: '2vw'},  
   minHeight: "5vh",
   p: 5,
   height: "auto",
@@ -21,16 +21,22 @@ const boxStyles = {
 const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
   
   return (   
-    <Flex minHeight="100vh" 
-      flexDirection={"column"}
-      minWidth={"100vw"} 
-      alignItems="center" justifyContent="center"
+    <Flex 
+      flexDirection={"column"} 
+      alignItems="center"  
+      height={'100%'}
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <QuoteBox> {quote}</QuoteBox>
-        <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
-        <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
-        <Preview boxStyles={boxStyles}/> 
+        <Center  height={'40vh'}>
+          <QuoteBox >{quote}</QuoteBox>
+        </Center> 
+        
+        <Center height={'30vh'} m='2' flexDirection={{base: 'column', lg: 'row'}}>
+          <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
+          <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
+          <Preview boxStyles={boxStyles}/>
+        </Center>
+        
       </DndProvider>
     </Flex>
     

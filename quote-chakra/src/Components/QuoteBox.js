@@ -1,4 +1,4 @@
-import {Center} from '@chakra-ui/react'
+import {Center, Text} from '@chakra-ui/react'
 import { useDrop } from 'react-dnd'
 
 
@@ -10,21 +10,22 @@ const QuoteBox = ({children}) => {
       isOver: monitor.isOver()
     }),
   }))
-  
+  console.log(isOver)
   return (
     <Center
       ref={drop}
       data-testid="quoteBox"
-      m={5}
-      bg={"tomato"} 
-      width={"auto"} 
-      minWidth={"50vw"}
-      maxWidth={'600px'}
-      minHeight={"20vh"} 
-      p={5} 
-      height={"auto"}
-      border="1px"> 
-      {isOver ? 'Release to drop' : children}
+      mx={10}
+      mb={10}
+      mt={1}
+      // textAlign='justify'
+      bg="tomato" 
+      width={{base: '70vw', lg: '50vw'}} 
+      minHeight="20vh"  
+      height="auto"
+      border="2px"
+      borderColor={isOver ? 'blue' : 'black'}> 
+      <Text py={5} px={5} fontSize={{base: '5vw', sm: '5vw', lg: '3vw'}}>"{children}"</Text>
     </Center>
   )
 }
