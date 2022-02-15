@@ -32,12 +32,13 @@ const initialState = {
 }
 const Game = () => {
   const [quoteState, quoteDispatch] = useReducer(gameDataReducer, initialState)
-  const [quoteChoice, setquoteChoice] = useState(null)
+  const [quoteChoice, setQuoteChoice] = useState(null)
   const [didWin, setDidWin] = useState(false)
-  
+
   useEffect(() => {
-    const {author} = quoteState.realQuote
+    
     if(quoteChoice) {
+      const {author} = quoteState.realQuote
       setDidWin(quoteChoice === author) 
     }
   },[quoteChoice])
@@ -61,13 +62,16 @@ const Game = () => {
   const authors = [realQuote.author,fakeQuote.author]
   const randomAuthors = randomizeAuthors(authors)
   
-
   return (
-    <Flex height={'100%'} width={'100%'} bg={'teal'}>
-      <GameBoard 
-        quote={realQuote.text} 
-        realAuthor={randomAuthors[0]} 
-        fakeAuthor={randomAuthors[1]} />
+    <Flex height={'100vh'} width={'100vw'} bg={'teal'} alignItems={'center'} justifyContent={'center'}>
+      {quoteChoice 
+        ? <Center  fontSize={40}>{didWin.toString().toUpperCase()}</Center>
+        : 
+        <GameBoard 
+          setQuoteChoice={setQuoteChoice}
+          quote={realQuote.text} 
+          realAuthor={randomAuthors[0]} 
+          fakeAuthor={randomAuthors[1]} />}
     </Flex>
   )
 }

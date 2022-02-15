@@ -18,7 +18,7 @@ const boxStyles = {
   border: "1px"
 }
 
-const GameBoard = ({quote, realAuthor, fakeAuthor}) => {
+const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
   
   return (   
     <Flex minHeight="100vh" 
@@ -28,8 +28,8 @@ const GameBoard = ({quote, realAuthor, fakeAuthor}) => {
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
         <QuoteBox> {quote}</QuoteBox>
-        <AuthorBox boxStyles={boxStyles}>{realAuthor}</AuthorBox>
-        <AuthorBox boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
+        <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
+        <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
         <Preview boxStyles={boxStyles}/> 
       </DndProvider>
     </Flex>
