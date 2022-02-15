@@ -1,27 +1,30 @@
 import {Center} from '@chakra-ui/react'
 import { useDrag } from 'react-dnd'
 
-const AuthorBox = ({children}) => {
-  const [_, drag] = useDrag(() => ({
+const AuthorBox = ({children, boxStyles}) => {
+  const [{isDragging}, drag] = useDrag(() => ({
     type: "AuthorBox",
-    item: { name: "AuthorBox" },
+    item: {text: children},
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging()
+
+    }),
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult()
+      dropResult ? console.log('hit') : console.log('miss')
     },
   }))
+  const visibility = isDragging ? "hidden" : "visible"
   return (
-    <Center 
+    <Center  
       ref={drag}
+      visibility={visibility}
       data-testid="quoteBox"
-      bg={"blue"} 
-      width={"auto"} 
-      minWidth={"25vw"}
-      maxWidth={"75vw"}
-      minHeight={"10vh"} 
-      p={5} 
-      height={"auto"}
-      border="1px">
-      {children}
+      {...boxStyles}>
+      
+     
+    
+      -{children}
     </Center>
   )
 }

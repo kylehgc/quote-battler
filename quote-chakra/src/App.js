@@ -1,13 +1,13 @@
 import React from 'react';
 import { ChakraProvider, theme } from '@chakra-ui/react';
-import GameBoard from './Components/GameBoard';
+import Game from './Components/Game';
 
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       
-      <GameBoard/>
+      <Game />
     
     </ChakraProvider>
   );
