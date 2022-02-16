@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/quote-battler/static/js/main.bdec9a2c.js",
+    "main.js": "/quote-battler/static/js/main.57cde1fc.js",
     "static/js/377.c56b8202.chunk.js": "/quote-battler/static/js/377.c56b8202.chunk.js",
     "index.html": "/quote-battler/index.html",
-    "main.bdec9a2c.js.map": "/quote-battler/static/js/main.bdec9a2c.js.map",
+    "main.57cde1fc.js.map": "/quote-battler/static/js/main.57cde1fc.js.map",
     "377.c56b8202.chunk.js.map": "/quote-battler/static/js/377.c56b8202.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.bdec9a2c.js"
+    "static/js/main.57cde1fc.js"
   ]
 }
