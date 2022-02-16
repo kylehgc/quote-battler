@@ -21,7 +21,7 @@ const QuoteBox = ({children}) => {
         mt={1}
         borderRadius={20}
         bg="tomato" 
-        width={{base: '70vw', lg: '50vw'}} 
+        width={{base: '75vw', lg: '50vw'}} 
         minHeight="20vh"  
         height="auto"
         border="2px"
