@@ -14,6 +14,7 @@ const boxStyles = {
   fontSize: {base: '4vw', lg: '3vw', xl: '2vw'},  
   minHeight: "5vh",
   borderRadius: 15,
+  fontWeight: 'bold',
   p: 5,
   height: "auto",
   border: "1px"
