@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/quote-battler/static/js/main.4fa520c3.js",
+    "static/js/377.c56b8202.chunk.js": "/quote-battler/static/js/377.c56b8202.chunk.js",
+    "index.html": "/quote-battler/index.html",
+    "main.4fa520c3.js.map": "/quote-battler/static/js/main.4fa520c3.js.map",
+    "377.c56b8202.chunk.js.map": "/quote-battler/static/js/377.c56b8202.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.4fa520c3.js"
+  ]
+}
