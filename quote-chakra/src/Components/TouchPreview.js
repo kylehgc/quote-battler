@@ -8,10 +8,10 @@ const TouchPreview = ({boxStyles}) => {
   }
   return <Center 
     opacity={0.8}
-    {...boxStyles}
+    layerStyle={'authorBox'}
     style={style}
   >
-    {item.text}
+    {item.text.toUpperCase()}
   </Center>  
 }
  

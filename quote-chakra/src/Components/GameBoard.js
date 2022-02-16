@@ -8,14 +8,14 @@ import Preview from './TouchPreview'
 
 const boxStyles = {
   m: 5,
-  color:'whiteAlpha.700',
+  color:'white',
   cursor: 'default',
   bg: "blue",
   width: {base: '65vw', lg: '30vw'},
   fontSize: {base: '4vw', lg: '2.5vw', xl: '1.5vw'},  
   minHeight: "5vh",
   borderRadius: 15,
-  fontWeight: 'bold',
+  // fontWeight: 'bold',
   p: 5,
   height: "auto",
   border: "1px"
@@ -39,8 +39,7 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
           <Preview boxStyles={boxStyles}/>
-        </Center>
-        
+        </Center>   
       </DndProvider>
     </Flex>
     

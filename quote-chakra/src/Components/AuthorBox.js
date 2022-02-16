@@ -24,11 +24,11 @@ const AuthorBox = ({children, boxStyles, setQuoteChoice}) => {
         ref={drag}
         visibility={visibility}
         data-testid="quoteBox"
-        {...boxStyles}>
+        layerStyle={'authorBox'}>
       
      
     
-      -{children}
+        {children.toUpperCase()}
       </Center>
     </SlideFade>
   )

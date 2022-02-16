@@ -44,6 +44,7 @@ const Game = () => {
   const LottieLose = useResults(false)
   const [gameState, gameDispatch] = useReducer(gameDataReducer, initialState)
   const [quoteChoice, setQuoteChoice] = useState(null)
+  const [didWin, setDidWin] = useState(null)
 
   useEffect(() => {
     if(quoteChoice) {
@@ -68,7 +69,7 @@ const Game = () => {
       getData()
     }
   },[gameState.loading])
-
+  
   const {loading, realQuote, fakeQuote} = gameState
   
   const authors = [realQuote.author,fakeQuote.author]

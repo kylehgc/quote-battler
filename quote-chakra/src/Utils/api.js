@@ -1,5 +1,14 @@
 const queryUrl = 'https://quote-garden.herokuapp.com/api/v3/quotes/random'
 
+export const mockApi = () =>  [{
+  author: "author 1",
+  text: "text 1",
+  genre: "genre 1" 
+},{author: "author 2",
+  text: "text 2",
+  genre: "genre 2" }]
+
+ 
 
 const getShortQuotes = (quotes,limit=150) => {
   const shortenedQuotes = quotes.filter((quote) => quote.quoteText.length < limit)
