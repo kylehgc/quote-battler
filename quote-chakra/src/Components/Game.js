@@ -73,7 +73,7 @@ const Game = () => {
   const randomAuthors = randomizeAuthors(authors)
   return (
     <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
-      <Center textAlign='center' height='25%' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
+      <Center textAlign='center' height='40%' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
       {loading    
         ? <Center> <Spinner size={'xl'}/></Center>
 

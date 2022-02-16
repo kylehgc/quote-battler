@@ -20,6 +20,7 @@ const AuthorBox = ({children, boxStyles, setQuoteChoice}) => {
   return (
     <SlideFade in={true}>
       <Center  
+       
         ref={drag}
         visibility={visibility}
         data-testid="quoteBox"

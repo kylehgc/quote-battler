@@ -8,7 +8,8 @@ const MyPreview = ({boxStyles}) => {
   return <Center 
     opacity={0.8}
     {...boxStyles}
-    style={style}>
+    style={style}
+  >
     {item.text}
   </Center>  
 }

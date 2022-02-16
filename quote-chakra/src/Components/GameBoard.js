@@ -9,9 +9,10 @@ import Preview from './TouchPreview'
 const boxStyles = {
   m: 5,
   color:'whiteAlpha.700',
+  cursor: 'default',
   bg: "blue",
   width: {base: '65vw', lg: '30vw'},
-  fontSize: {base: '4vw', lg: '3vw', xl: '2vw'},  
+  fontSize: {base: '4vw', lg: '2.5vw', xl: '1.5vw'},  
   minHeight: "5vh",
   borderRadius: 15,
   fontWeight: 'bold',
@@ -26,14 +27,15 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
     <Flex 
       flexDirection={"column"} 
       alignItems="center"  
-      height={'70%'}
+      height={'100%'}
+      
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Center  height={'60%'}>
+        <Flex mb={{base: 15, lg: 20}} height={'60%'} alignItems={'flex-end'}>
           <QuoteBox >{quote}</QuoteBox>
-        </Center> 
+        </Flex> 
         
-        <Center height={'40%'} m={2} pb='5%' flexDirection={{base: 'column', lg: 'row'}}>
+        <Center height={'40%'} m={2} py='5%' flexDirection={{base: 'column', lg: 'row'}}>
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
           <Preview boxStyles={boxStyles}/>
