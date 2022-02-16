@@ -31,11 +31,11 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
       
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Flex mb={{base: 15, lg: 20}} height={'60%'} alignItems={'flex-end'}>
+        <Flex mb={{base: 15, lg: 20}} pt={20} height={'70%'} alignItems={'center'}>
           <QuoteBox >{quote}</QuoteBox>
         </Flex> 
         
-        <Center height={'40%'} m={2} py='5%' flexDirection={{base: 'column', lg: 'row'}}>
+        <Center height={'50%'} m={2} py='5%' flexDirection={{base: 'column', lg: 'row'}}>
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
           <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
           <Preview boxStyles={boxStyles}/>

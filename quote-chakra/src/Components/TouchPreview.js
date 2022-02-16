@@ -1,6 +1,7 @@
 import {usePreview} from 'react-dnd-preview'
 import { Center } from '@chakra-ui/react'
-const MyPreview = ({boxStyles}) => {
+
+const TouchPreview = ({boxStyles}) => {
   const {display, item, style} = usePreview()
   if (!display) {
     return null;
@@ -14,4 +15,4 @@ const MyPreview = ({boxStyles}) => {
   </Center>  
 }
  
-export default MyPreview
+export default TouchPreview

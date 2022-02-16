@@ -17,16 +17,15 @@ const QuoteBox = ({children}) => {
         ref={drop}
         data-testid="quoteBox"
         mx={10}
-        mb={0}
-        mt={0}
         borderRadius={20}
         bg="tomato" 
         width={{base: '75vw', sm: '60vw', lg: '50vw'}} 
-        minHeight="2"  
+        minHeight="20vh"  
         height="auto"
+        maxHeight="50vh"
         border="2px"
         borderColor={isOver ? 'blue' : 'black'}> 
-        <Text cursor='default' py={5} px={5} fontSize={{base: '6vw', sm: '5vw', lg: '2.5vw'}}>"{children}"</Text>
+        <Text cursor='default' p={{base:5, lg: 10}} fontSize={{base: '7vw', sm: '5vw', lg: '2.5vw'}}>"{children}"</Text>
       </Center>
     </Fade>
   )

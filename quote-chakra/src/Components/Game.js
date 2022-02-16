@@ -1,7 +1,8 @@
-import {Center, Flex, Spinner, Heading, Box} from '@chakra-ui/react'
+import {Center, Flex, Spinner, Heading, Box, useRangeSlider} from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
 import { useEffect,useReducer,useState } from 'react'
+import useResults from './useResults'
 
 const randomizeAuthors =(authors) => {
   const randomAuthors = authors.slice(0)
@@ -39,15 +40,17 @@ const initialState = {
   error: null
 }
 const Game = () => {
+  const LottieWin = useResults(true)
+  const LottieLose = useResults(false)
   const [gameState, gameDispatch] = useReducer(gameDataReducer, initialState)
   const [quoteChoice, setQuoteChoice] = useState(null)
-  const [didWin, setDidWin] = useState(false)
 
   useEffect(() => {
     
     if(quoteChoice) {
       const {author} = gameState.realQuote
-      setDidWin(quoteChoice === author) 
+      
+      quoteChoice === author ? LottieWin() : LottieLose()
       gameDispatch({type: 'newQuote'})
     } 
   },[quoteChoice])
@@ -73,7 +76,7 @@ const Game = () => {
   const randomAuthors = randomizeAuthors(authors)
   return (
     <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
-      <Center textAlign='center' height='40%' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
+      <Center textAlign='center' height='15%' width={'100vw'} ></Center>   
       {loading    
         ? <Center> <Spinner size={'xl'}/></Center>
 
