@@ -4,7 +4,7 @@ import thumbsUpAnimation from '../Animations/36673-all-the-best.json'
 import thumbsDownAnimation from '../Animations/3983-thumbs-down.json'
 
 const style = {
-  height: '35vh'
+  height: '25vh'
 }
 const LottieWinAnimation =() => {
  
