@@ -46,7 +46,6 @@ const Game = () => {
   const [quoteChoice, setQuoteChoice] = useState(null)
 
   useEffect(() => {
-    
     if(quoteChoice) {
       const {author} = gameState.realQuote
       
@@ -75,7 +74,7 @@ const Game = () => {
   const authors = [realQuote.author,fakeQuote.author]
   const randomAuthors = randomizeAuthors(authors)
   return (
-    <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
+    <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}> 
       <Center textAlign='center' height='15%' width={'100vw'} ></Center>   
       {loading    
         ? <Center height='100%'> <Spinner size={'xl'}/></Center>
