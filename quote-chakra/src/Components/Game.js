@@ -73,9 +73,9 @@ const Game = () => {
   const randomAuthors = randomizeAuthors(authors)
   return (
     <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
-      <Center id='test' textAlign='center' height='30vh' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
+      <Center textAlign='center' height='25%' width={'100vw'} ><Heading visibility={quoteChoice ? "visible" : "hidden"} fontSize='4xl'>{didWin.toString().toUpperCase()} </Heading></Center>
       {loading    
-        ? <Center height='100%'> <Spinner size={'xl'}/></Center>
+        ? <Center> <Spinner size={'xl'}/></Center>
 
         : <GameBoard 
           setQuoteChoice={setQuoteChoice}
