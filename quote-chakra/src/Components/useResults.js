@@ -37,6 +37,9 @@ const Results = (didWin) => {
   return () => toast({
     position: 'top',
     duration: 500,
+    containerStyle: {
+      border: `10px solid ${didWin ? 'green' : 'red'}`,
+    },
     render: didWin? () => (
       <LottieWinAnimation/>
     ) : () => (
