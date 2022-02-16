@@ -78,7 +78,7 @@ const Game = () => {
     <Flex height='100vh' width='100vw'  bg='teal' flexDirection={'column'}> 
       <Center textAlign='center' height='15%' width={'100vw'} ></Center>   
       {loading    
-        ? <Center> <Spinner size={'xl'}/></Center>
+        ? <Center height='100%'> <Spinner size={'xl'}/></Center>
 
         : <GameBoard 
           setQuoteChoice={setQuoteChoice}
