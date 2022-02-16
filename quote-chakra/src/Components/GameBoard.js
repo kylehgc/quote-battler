@@ -13,6 +13,7 @@ const boxStyles = {
   width: {base: '65vw', lg: '30vw'},
   fontSize: {base: '4vw', lg: '3vw', xl: '2vw'},  
   minHeight: "5vh",
+  borderRadius: 15,
   p: 5,
   height: "auto",
   border: "1px"
@@ -24,7 +25,7 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
     <Flex 
       flexDirection={"column"} 
       alignItems="center"  
-      height={'70vh'}
+      height={'70%'}
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
         <Center  height={'60%'}>

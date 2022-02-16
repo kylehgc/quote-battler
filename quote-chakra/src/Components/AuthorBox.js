@@ -1,4 +1,4 @@
-import {Center} from '@chakra-ui/react'
+import {Center, SlideFade} from '@chakra-ui/react'
 import { useDrag } from 'react-dnd'
 
 const AuthorBox = ({children, boxStyles, setQuoteChoice}) => {
@@ -18,16 +18,18 @@ const AuthorBox = ({children, boxStyles, setQuoteChoice}) => {
   }))
   const visibility = isDragging ? "hidden" : "visible"
   return (
-    <Center  
-      ref={drag}
-      visibility={visibility}
-      data-testid="quoteBox"
-      {...boxStyles}>
+    <SlideFade in={true}>
+      <Center  
+        ref={drag}
+        visibility={visibility}
+        data-testid="quoteBox"
+        {...boxStyles}>
       
      
     
       -{children}
-    </Center>
+      </Center>
+    </SlideFade>
   )
 }
 
