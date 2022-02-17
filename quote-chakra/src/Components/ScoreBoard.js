@@ -11,7 +11,7 @@ const getCounterColour = (secondsLeft) => {
   } else return 'red.400'
 }
 
-const ScoreBoard = ({gameDispatch, currentQuote, didWinLast, startingTimer=20}) => {
+const ScoreBoard = ({gameDispatch, currentQuote, didWinLast, startingTimer=30}) => {
   const [score, setScore] = useState(0)
   const [livesLeft, setLivesLeft] = useState(3)
   const [timeLeft,setTimeLeft] = useCounter(startingTimer)
