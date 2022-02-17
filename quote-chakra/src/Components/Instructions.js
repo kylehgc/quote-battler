@@ -13,8 +13,8 @@ const instructionsText = `Drag or double click the correct author to the quote. 
 const Instructions = ({gameDispatch}) => {
   const largeAnimationCorrect = {y: [0,-400,0], x: [0,100,0]}
   const largeAnimationIncorrect = {y: [0,-400,0], x: [0,-100,0]}
-  const smallAnimationCorrect = {y: [0,-200,0,0]}
-  const smallAnimationIncorrect ={y: [0,-400,0,0]}
+  const smallAnimationCorrect = {y: [0,-300,0,0]}
+  const smallAnimationIncorrect ={y: [0,-500,0,0]}
   const animationCorrect = window.innerWidth < 1000 ? smallAnimationCorrect : largeAnimationCorrect
   const animationIncorrect = window.innerWidth < 1000 ? smallAnimationIncorrect : largeAnimationIncorrect
   
