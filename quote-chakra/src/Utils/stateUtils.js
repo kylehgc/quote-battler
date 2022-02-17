@@ -23,7 +23,7 @@ export const gameDataReducer = (state,action) => {
     }
   } else if (action.type === 'new') {
     return {
-      ... initialState,
+      ...initialState,
       loading: true,
       gamePlaying: true
     }

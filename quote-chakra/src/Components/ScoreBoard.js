@@ -28,6 +28,7 @@ const ScoreBoard = ({gameDispatch, currentQuote, didWinLast, startingTimer=20}) 
         setTimeLeft((timeLeft) + 2) 
       } else setLivesLeft((lives) => lives - 1)}
   } 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   , [currentQuote])
   
   

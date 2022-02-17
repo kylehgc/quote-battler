@@ -1,7 +1,6 @@
 import { DndProvider} from "react-dnd"
 import { TouchBackend } from "react-dnd-touch-backend"
-import {Flex,Center, useBreakpoint} from '@chakra-ui/react'
-import useResultAnimation from '../Custom-Hooks/useResultAnimation'
+import {Flex,Center} from '@chakra-ui/react'
 import AuthorBox from "./AuthorBox"
 import QuoteBox from "./QuoteBox"
 import { motion } from "framer-motion"

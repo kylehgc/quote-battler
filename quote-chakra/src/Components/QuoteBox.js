@@ -1,4 +1,4 @@
-import {Center, Text, SlideFade, Box, Flex, Icon} from '@chakra-ui/react'
+import {Center, SlideFade, Box, Flex} from '@chakra-ui/react'
 import { useDrop } from 'react-dnd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'

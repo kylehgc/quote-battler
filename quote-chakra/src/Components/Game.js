@@ -2,7 +2,7 @@
 import {Button, Center, Flex, Spinner} from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
-import { useEffect,useReducer,useState } from 'react'
+import { useEffect,useReducer} from 'react'
 import useResultAnimation from '../Custom-Hooks/useResultAnimation'
 import ScoreBoard from './ScoreBoard'
 import { gameDataReducer, randomizeAuthors,initialState } from '../Utils/stateUtils'

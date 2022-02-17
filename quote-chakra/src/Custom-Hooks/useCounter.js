@@ -9,11 +9,10 @@ const useCounter = (startingTimer) => {
   const clear = () => window.clearInterval(id.current)
   
   useEffect(() => {
-    if(timeLeft !== null){
-      id.current = window.setInterval(() => {
-        setTimeLeft((time) => time - 1)
-      }, 1000) 
-      return clear}
+    id.current = window.setInterval(() => {
+      setTimeLeft((time) => time - 1)
+    }, 1000) 
+    return clear
   },[])
 
   useEffect(() => {

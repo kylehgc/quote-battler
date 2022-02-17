@@ -1,4 +1,4 @@
-import { Center, Spacer, Heading } from "@chakra-ui/react"
+import { Center, Heading } from "@chakra-ui/react"
 
 
 const Results = ({score}) => {
