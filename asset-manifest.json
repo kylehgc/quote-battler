@@ -1,12 +1,30 @@
 {
   "files": {
-    "main.js": "/quote-battler/static/js/main.57cde1fc.js",
+    "main.css": "/quote-battler/static/css/main.1acf7bda.css",
+    "main.js": "/quote-battler/static/js/main.684a67a2.js",
     "static/js/377.c56b8202.chunk.js": "/quote-battler/static/js/377.c56b8202.chunk.js",
+    "static/media/open-sans-all-700-normal.woff": "/quote-battler/static/media/open-sans-all-700-normal.3499b9716301bd3c513c.woff",
+    "static/media/montserrat-all-700-normal.woff": "/quote-battler/static/media/montserrat-all-700-normal.81b48f7ab9882a2f3ea9.woff",
+    "static/media/open-sans-cyrillic-ext-700-normal.woff2": "/quote-battler/static/media/open-sans-cyrillic-ext-700-normal.3c59ade8b77934a45b30.woff2",
+    "static/media/open-sans-latin-700-normal.woff2": "/quote-battler/static/media/open-sans-latin-700-normal.166dc5efb248e5752096.woff2",
+    "static/media/montserrat-latin-700-normal.woff2": "/quote-battler/static/media/montserrat-latin-700-normal.6077783c63fa414406e1.woff2",
+    "static/media/open-sans-latin-ext-700-normal.woff2": "/quote-battler/static/media/open-sans-latin-ext-700-normal.45e8e1ac313ddc44a973.woff2",
+    "static/media/montserrat-latin-ext-700-normal.woff2": "/quote-battler/static/media/montserrat-latin-ext-700-normal.6e9703930749a253a40c.woff2",
+    "static/media/open-sans-cyrillic-700-normal.woff2": "/quote-battler/static/media/open-sans-cyrillic-700-normal.1c275ed85d097d423a5a.woff2",
+    "static/media/montserrat-cyrillic-ext-700-normal.woff2": "/quote-battler/static/media/montserrat-cyrillic-ext-700-normal.1a6d53ebed645ed509ee.woff2",
+    "static/media/open-sans-greek-700-normal.woff2": "/quote-battler/static/media/open-sans-greek-700-normal.8fe2fcd1cc0060a5abe8.woff2",
+    "static/media/montserrat-cyrillic-700-normal.woff2": "/quote-battler/static/media/montserrat-cyrillic-700-normal.56a74dfbd69c9a2c5687.woff2",
+    "static/media/open-sans-hebrew-700-normal.woff2": "/quote-battler/static/media/open-sans-hebrew-700-normal.87a0af0cdd297129379f.woff2",
+    "static/media/open-sans-vietnamese-700-normal.woff2": "/quote-battler/static/media/open-sans-vietnamese-700-normal.f7029b9ddd8d28129255.woff2",
+    "static/media/open-sans-greek-ext-700-normal.woff2": "/quote-battler/static/media/open-sans-greek-ext-700-normal.6ec764fe61947b88ec49.woff2",
+    "static/media/montserrat-vietnamese-700-normal.woff2": "/quote-battler/static/media/montserrat-vietnamese-700-normal.053a2c85199f87b0b130.woff2",
     "index.html": "/quote-battler/index.html",
-    "main.57cde1fc.js.map": "/quote-battler/static/js/main.57cde1fc.js.map",
+    "main.1acf7bda.css.map": "/quote-battler/static/css/main.1acf7bda.css.map",
+    "main.684a67a2.js.map": "/quote-battler/static/js/main.684a67a2.js.map",
     "377.c56b8202.chunk.js.map": "/quote-battler/static/js/377.c56b8202.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.57cde1fc.js"
+    "static/css/main.1acf7bda.css",
+    "static/js/main.684a67a2.js"
   ]
 }
