@@ -45,7 +45,7 @@ const Game = () => {
   if(gamePlaying) {
 
     return(
-      <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}>
+      <Flex height='93vh'  width='100vw' flexDirection={'column'}>
         <ScoreBoard
           gameDispatch={gameDispatch}
           startingTimer={20}
@@ -73,9 +73,13 @@ const Game = () => {
         fontFamily='montserrat' 
         color='#8a4fff' 
         type='whiteAlpha' 
-        mt='5vh' width='30vh' 
-        height='20vh' 
-        fontSize={40}
+        mt='5vh' 
+        minwidth='30vh' 
+        minheight='20vh'
+        height='auto'
+        width='auto'
+        padding={4} 
+        fontSize='4vh'
         onClick={() => gameDispatch({type: 'new'})}
       > 
         New Game

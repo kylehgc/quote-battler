@@ -15,7 +15,7 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, gameDispatch}) => {
       
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Flex my={{base: 15, lg: 20}}  justifyContent='space-around' height={'70%'} alignItems={'center'}>
+        <Flex my={{base: 15, lg: 20}}  justifyContent='center' height={'70%'} alignItems={'center'}>
           <QuoteBox >{quote}</QuoteBox>
         </Flex> 
         

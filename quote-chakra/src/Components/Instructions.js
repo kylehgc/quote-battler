@@ -7,9 +7,7 @@ import QuoteBox from "./QuoteBox"
 import { motion } from "framer-motion"
 
 
-const instructionsText = `You have 20 seconds to 
- drag or double click the correct author to the quote. Three wrong answers and you're Out. Correct Answers will
- add two second to the timer.  GoodLuck! `
+const instructionsText = `Drag or double click the correct author to the quote. Three wrong or timer ends and you're out. Correct Answers will add two second to the timer.`
  
 
 const Instructions = () => {
