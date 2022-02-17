@@ -18,10 +18,10 @@ const Results = ({score}) => {
 
   return (
     <Center flexDirection='column' height='100%' alignItems='center' >
-      <Heading size='4xl' pb={20} color='red.300'>GAME OVER</Heading>
-      {newHighScore ? <Heading size='4xl' color='whiteAlpha.900'>New High Score!</Heading> : null}   
-      <Heading pt={20} color='whiteAlpha.700' size='3xl'>High Score: {highScore} </Heading>
-      <Heading pt={10} color='whiteAlpha.700' size='3xl'>Score: {score} </Heading>     
+      <Heading size='3xl' pb={20} color='red.300'>GAME OVER</Heading>
+      {newHighScore ? <Heading size='3xl' color='whiteAlpha.900'>New High Score!</Heading> : null}   
+      <Heading pt={20} color='whiteAlpha.700' size='2xl'>High Score: {highScore} </Heading>
+      <Heading pt={10} color='whiteAlpha.700' size='2xl'>Score: {score} </Heading>     
       
     </Center>
   )
