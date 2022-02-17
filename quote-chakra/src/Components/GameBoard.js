@@ -5,23 +5,7 @@ import { DndProvider } from 'react-dnd'
 import {TouchBackend} from 'react-dnd-touch-backend'
 import Preview from './TouchPreview'
 
-
-const boxStyles = {
-  m: 5,
-  color:'white',
-  cursor: 'default',
-  bg: "blue",
-  width: {base: '65vw', lg: '30vw'},
-  fontSize: {base: '4vw', lg: '2.5vw', xl: '1.5vw'},  
-  minHeight: "5vh",
-  borderRadius: 15,
-  // fontWeight: 'bold',
-  p: 5,
-  height: "auto",
-  border: "1px"
-}
-
-const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
+const GameBoard = ({quote, realAuthor, fakeAuthor, gameDispatch}) => {
   
   return (   
     <Flex 
@@ -31,14 +15,14 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, setQuoteChoice}) => {
       
     >	
       <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Flex mb={{base: 15, lg: 20}} pt={20} height={'70%'} alignItems={'center'}>
+        <Flex my={{base: 15, lg: 20}}  justifyContent='space-around' height={'70%'} alignItems={'center'}>
           <QuoteBox >{quote}</QuoteBox>
         </Flex> 
         
-        <Center height={'50%'} m={2} py='5%' flexDirection={{base: 'column', lg: 'row'}}>
-          <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{realAuthor}</AuthorBox>
-          <AuthorBox setQuoteChoice={setQuoteChoice} boxStyles={boxStyles}>{fakeAuthor}</AuthorBox>
-          <Preview boxStyles={boxStyles}/>
+        <Center height={'70%'} justifyContent='space-around' flexDirection={{base: 'column', lg: 'row'}}>
+          <AuthorBox gameDispatch={gameDispatch}>{realAuthor}</AuthorBox>
+          <AuthorBox gameDispatch={gameDispatch}>{fakeAuthor}</AuthorBox>
+          <Preview />
         </Center>   
       </DndProvider>
     </Flex>

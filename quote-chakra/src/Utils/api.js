@@ -34,7 +34,7 @@ const formatGameData = (quotes) => {
 const getGameData = async(quotes=2) => {
   const fullQuotes = await getQuotes()
   const shortenedQuotes = getShortQuotes(fullQuotes)
-  const formattedGameData = formatGameData(shortenedQuotes)
+  let formattedGameData = formatGameData(shortenedQuotes)
   return formattedGameData
 }
 export default getGameData

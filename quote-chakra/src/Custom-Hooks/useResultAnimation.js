@@ -14,7 +14,7 @@ const LottieWinAnimation =() => {
     autoplay: true,
   }
   const {View, setSpeed} = useLottie(options,style)
-  setSpeed(3)
+  setSpeed(4)
   return View
 }   
 
@@ -27,7 +27,7 @@ const LottieloseAnimation =() => {
   }
 
   const {View, setSpeed} = useLottie(options,style)
-  setSpeed(1)
+  setSpeed(1.3)
   return View
 }
 
