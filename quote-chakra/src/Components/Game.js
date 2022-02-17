@@ -1,11 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {Center, Flex, Spinner} from '@chakra-ui/react'
+import {Button, Center, Flex, Spinner} from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
 import { useEffect,useReducer,useState } from 'react'
 import useResultAnimation from '../Custom-Hooks/useResultAnimation'
 import ScoreBoard from './ScoreBoard'
 import { gameDataReducer, randomizeAuthors,initialState } from '../Utils/stateUtils'
+import Instructions from './Instructions'
+import Results from './Results'
+
 
 const Game = () => {
   const WinAnimation = useResultAnimation(true)
@@ -17,7 +20,7 @@ const Game = () => {
     if(didWinLast !== null) {
       didWinLast ? WinAnimation() : LoseAnimation()
     }
-  },[gameState.realQuote.text])
+  },[gameState.realQuote])
   
   useEffect(() => {
     const getData = async () => {
@@ -33,28 +36,53 @@ const Game = () => {
     }
   },[gameState.loading])
   
-  const {loading, realQuote, fakeQuote, didWinLast} = gameState
+  const {loading, realQuote, fakeQuote, didWinLast, gamePlaying, score } = gameState
   
   const authors = [realQuote.author,fakeQuote.author]
   const currentQuote = realQuote.text
   const randomAuthors = randomizeAuthors(authors)
-  return (
-    <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}> 
-      
-      <ScoreBoard
-        startingTimer={20}
-        didWinLast={didWinLast}
-        currentQuote={currentQuote} 
-      />
-       
-      {loading    
-        ? <Center height='100%'> <Spinner size={'xl'}/></Center>
 
-        : <GameBoard 
+  if(gamePlaying) {
+
+    return(
+      <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}>
+        <ScoreBoard
           gameDispatch={gameDispatch}
-          quote={realQuote.text} 
-          realAuthor={randomAuthors[0]} 
-          fakeAuthor={randomAuthors[1]} /> }
+          startingTimer={20}
+          didWinLast={didWinLast}
+          currentQuote={currentQuote} 
+        />
+       
+        {loading    
+          ? <Center height='100%'> <Spinner size={'xl'}/></Center>
+
+          : <GameBoard 
+            gameDispatch={gameDispatch}
+            quote={realQuote.text} 
+            realAuthor={randomAuthors[0]} 
+            fakeAuthor={randomAuthors[1]} /> } 
+      </Flex>
+    )
+  }
+  
+  return (
+    <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}>
+    
+      <Button alignSelf='center' 
+        borderRadius={30} 
+        fontFamily='montserrat' 
+        color='#8a4fff' 
+        type='whiteAlpha' 
+        mt='5vh' width='30vh' 
+        height='20vh' 
+        fontSize={40}
+        onClick={() => gameDispatch({type: 'new'})}
+      > 
+        New Game
+      </Button> 
+      {score ?  <Results score={score}/> : <Instructions/> }
+     
+      
     </Flex>
   )
 }

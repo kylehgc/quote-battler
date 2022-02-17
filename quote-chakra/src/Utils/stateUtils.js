@@ -16,10 +16,22 @@ export const gameDataReducer = (state,action) => {
       didWinLast: didWin
     }
 
-  }      else if (action.type === 'error') {
+  } else if (action.type === 'error') {
     return {
       ...state,
       error: action.error
+    }
+  } else if (action.type === 'new') {
+    return {
+      ... initialState,
+      loading: true,
+      gamePlaying: true
+    }
+  } else if (action.type === 'gameover') {
+    return {
+      ...state,
+      gamePlaying: false,
+      score: action.score
     }
   }
 }
@@ -33,9 +45,11 @@ export const randomizeAuthors =(authors) => {
 export const initialState = {
   realQuote: {},
   fakeQuote: {},
-  loading: true,
+  loading: false,
   quoteChoice:null,
   over: false,
   error: null,
-  didWinLast: null
+  didWinLast: null,
+  score: null,
+  gamePlaying: false
 }

@@ -20,14 +20,14 @@ const AuthorBox = ({children, gameDispatch}) => {
   return (
     <SlideFade in={true}>
       <Center  
-       
+        onDoubleClick={() => gameDispatch({type: 'AuthorChoice', choice: children})}
         ref={drag}
         visibility={visibility}
         data-testid="quoteBox"
         layerStyle={'authorBox'}>
       
      
-    
+        
         {children.toUpperCase()}
       </Center>
     </SlideFade>
