@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/quote-battler/static/css/main.1acf7bda.css",
-    "main.js": "/quote-battler/static/js/main.ca1b4420.js",
+    "main.js": "/quote-battler/static/js/main.a6802ad6.js",
     "static/js/377.c56b8202.chunk.js": "/quote-battler/static/js/377.c56b8202.chunk.js",
     "static/media/open-sans-all-700-normal.woff": "/quote-battler/static/media/open-sans-all-700-normal.3499b9716301bd3c513c.woff",
     "static/media/montserrat-all-700-normal.woff": "/quote-battler/static/media/montserrat-all-700-normal.81b48f7ab9882a2f3ea9.woff",
@@ -20,11 +20,11 @@
     "static/media/montserrat-vietnamese-700-normal.woff2": "/quote-battler/static/media/montserrat-vietnamese-700-normal.053a2c85199f87b0b130.woff2",
     "index.html": "/quote-battler/index.html",
     "main.1acf7bda.css.map": "/quote-battler/static/css/main.1acf7bda.css.map",
-    "main.ca1b4420.js.map": "/quote-battler/static/js/main.ca1b4420.js.map",
+    "main.a6802ad6.js.map": "/quote-battler/static/js/main.a6802ad6.js.map",
     "377.c56b8202.chunk.js.map": "/quote-battler/static/js/377.c56b8202.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1acf7bda.css",
-    "static/js/main.ca1b4420.js"
+    "static/js/main.a6802ad6.js"
   ]
 }
