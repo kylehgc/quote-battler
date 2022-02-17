@@ -84,7 +84,7 @@ const Game = () => {
       > 
         New Game
       </Button> 
-      {score ?  <Results score={score}/> : <Instructions/> }
+      {score ?  <Results score={score}/> : <Instructions gameDispatch={gameDispatch}/> }
      
       
     </Flex>

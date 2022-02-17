@@ -5,8 +5,9 @@ import { DndProvider } from 'react-dnd'
 import {TouchBackend} from 'react-dnd-touch-backend'
 import Preview from './TouchPreview'
 
+
 const GameBoard = ({quote, realAuthor, fakeAuthor, gameDispatch}) => {
-  
+   
   return (   
     <Flex 
       flexDirection={"column"} 
@@ -20,8 +21,8 @@ const GameBoard = ({quote, realAuthor, fakeAuthor, gameDispatch}) => {
         </Flex> 
         
         <Center height={'70%'} justifyContent='space-around' flexDirection={{base: 'column', lg: 'row'}}>
-          <AuthorBox gameDispatch={gameDispatch}>{realAuthor}</AuthorBox>
-          <AuthorBox gameDispatch={gameDispatch}>{fakeAuthor}</AuthorBox>
+          <AuthorBox onChoice={() => gameDispatch({type: 'AuthorChoice', choice: realAuthor})}>{realAuthor}</AuthorBox>
+          <AuthorBox onChoice={() => gameDispatch({type: 'AuthorChoice', choice: fakeAuthor})}>{fakeAuthor}</AuthorBox>
           <Preview />
         </Center>   
       </DndProvider>

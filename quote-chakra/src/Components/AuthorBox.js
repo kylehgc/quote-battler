@@ -1,7 +1,7 @@
 import {Center, SlideFade} from '@chakra-ui/react'
 import { useDrag } from 'react-dnd'
 
-const AuthorBox = ({children, gameDispatch}) => {
+const AuthorBox = ({children, onChoice}) => {
   const [{isDragging}, drag] = useDrag(() => ({
     type: "AuthorBox",
     item: {text: children},
@@ -12,7 +12,7 @@ const AuthorBox = ({children, gameDispatch}) => {
     end: (_, monitor) => {
       const dropResult = monitor.getDropResult()
       if(dropResult) {
-        gameDispatch({type: 'AuthorChoice', choice: children})
+        onChoice()
       }
     },
   }))
@@ -20,14 +20,14 @@ const AuthorBox = ({children, gameDispatch}) => {
   return (
     <SlideFade in={true}>
       <Center  
-        onDoubleClick={() => gameDispatch({type: 'AuthorChoice', choice: children})}
+        onDoubleClick={()=> onChoice()}
         ref={drag}
         visibility={visibility}
         data-testid="quoteBox"
         layerStyle={'authorBox'}>
       
      
-        
+
         {children.toUpperCase()}
       </Center>
     </SlideFade>
