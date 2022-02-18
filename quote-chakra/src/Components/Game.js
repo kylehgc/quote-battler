@@ -48,7 +48,7 @@ const Game = () => {
       <Flex height='93vh'  width='100vw' flexDirection={'column'}>
         <ScoreBoard
           gameDispatch={gameDispatch}
-          startingTimer={20}
+          startingTimer={30}
           didWinLast={didWinLast}
           currentQuote={currentQuote} 
         />
