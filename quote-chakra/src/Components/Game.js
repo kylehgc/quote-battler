@@ -48,7 +48,7 @@ const Game = () => {
       <Flex height='93vh'  width='100vw' flexDirection={'column'}>
         <ScoreBoard
           gameDispatch={gameDispatch}
-          startingTimer={30}
+          startingTimer={45}
           didWinLast={didWinLast}
           currentQuote={currentQuote} 
         />
@@ -66,7 +66,7 @@ const Game = () => {
   }
   
   return (
-    <Flex height='93vh' overflow='hidden' width='100vw' flexDirection={'column'}>
+    <Flex height='93vh' width='100vw' flexDirection={'column'}>
     
       <Button alignSelf='center' 
         borderRadius={30} 

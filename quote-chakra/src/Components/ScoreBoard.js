@@ -25,7 +25,7 @@ const ScoreBoard = ({gameDispatch, currentQuote, didWinLast, startingTimer=30}) 
     if (didWinLast !== null){
       if(didWinLast) { 
         setScore((total) => total + 1) 
-        setTimeLeft((timeLeft) + 2) 
+        setTimeLeft((timeLeft) + 5) 
       } else setLivesLeft((lives) => lives - 1)}
   } 
   // eslint-disable-next-line react-hooks/exhaustive-deps

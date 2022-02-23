@@ -7,7 +7,7 @@ import QuoteBox from "./QuoteBox"
 import { motion } from "framer-motion"
 import TouchPreview from "./TouchPreview"
 
-const instructionsText = `Drag or double click the correct author to the quote. Three wrong or timer ends and you're out. Correct Answers will add two second to the timer.`
+const instructionsText = `Drag or double click the correct author to the quote. Three wrong or timer ends and you're out. Correct Answers will add five second to the timer.`
  
 
 const Instructions = ({gameDispatch}) => {
