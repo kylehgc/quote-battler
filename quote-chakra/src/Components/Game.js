@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {Button, Center, Flex, Spinner} from '@chakra-ui/react'
+import {Button, Flex} from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
 import { useEffect,useReducer} from 'react'
 import useResultAnimation from '../Custom-Hooks/useResultAnimation'
-import ScoreBoard from './ScoreBoard'
 import { gameDataReducer, randomizeAuthors,initialState } from '../Utils/stateUtils'
 import Instructions from './Instructions'
 import Results from './Results'
@@ -45,23 +44,21 @@ const Game = () => {
   if(gamePlaying) {
 
     return(
-      <Flex height='93vh'  width='100vw' flexDirection={'column'}>
-        <ScoreBoard
-          gameDispatch={gameDispatch}
-          startingTimer={45}
-          didWinLast={didWinLast}
-          currentQuote={currentQuote} 
-        />
+      
+        
        
-        {loading    
-          ? <Center height='100%'> <Spinner size={'xl'}/></Center>
+          
+         
 
-          : <GameBoard 
-            gameDispatch={gameDispatch}
-            quote={realQuote.text} 
-            realAuthor={randomAuthors[0]} 
-            fakeAuthor={randomAuthors[1]} /> } 
-      </Flex>
+      <GameBoard 
+        loading={loading}
+        didWinLast={didWinLast}
+        currentQuote={currentQuote}
+        gameDispatch={gameDispatch}
+        quote={realQuote.text} 
+        realAuthor={randomAuthors[0]} 
+        fakeAuthor={randomAuthors[1]} /> 
+      
     )
   }
   

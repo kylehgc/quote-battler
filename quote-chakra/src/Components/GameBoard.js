@@ -1,33 +1,28 @@
-import {Flex, Center } from '@chakra-ui/react'
-import QuoteBox from './QuoteBox'
-import AuthorBox from './AuthorBox'
-import { DndProvider } from 'react-dnd'
-import {TouchBackend} from 'react-dnd-touch-backend'
-import Preview from './TouchPreview'
+import {Flex, Center,Spinner } from '@chakra-ui/react'
+import QuoteBoard from './QuoteBoard'
+import ScoreBoard from './ScoreBoard'
 
-
-const GameBoard = ({quote, realAuthor, fakeAuthor, gameDispatch}) => {
+const GameBoard = ({
+  didWinLast, currentQuote, loading,quote, realAuthor, fakeAuthor, gameDispatch}) => {
    
   return (   
-    <Flex 
-      flexDirection={"column"} 
-      alignItems="center"  
-      height={'100%'}
-      
-    >	
-      <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
-        <Flex my={{base: 15, lg: 20}}  justifyContent='center' height={'70%'} alignItems={'center'}>
-          <QuoteBox >{quote}</QuoteBox>
-        </Flex> 
+    <Flex height='93vh'  width='100vw' flexDirection={'column'}>
+      <ScoreBoard
+        gameDispatch={gameDispatch}
+        startingTimer={30}
+        didWinLast={didWinLast}
+        currentQuote={currentQuote} 
+      />
+      {loading 
+        ? <Center height='100%'> <Spinner size={'xl'}/></Center> 
         
-        <Center height={'70%'} justifyContent='space-around' flexDirection={{base: 'column', lg: 'row'}}>
-          <AuthorBox onChoice={() => gameDispatch({type: 'AuthorChoice', choice: realAuthor})}>{realAuthor}</AuthorBox>
-          <AuthorBox onChoice={() => gameDispatch({type: 'AuthorChoice', choice: fakeAuthor})}>{fakeAuthor}</AuthorBox>
-          <Preview />
-        </Center>   
-      </DndProvider>
+        : <QuoteBoard 
+          quote={quote} 
+          realAuthor={realAuthor} 
+          gameDispatch={gameDispatch} 
+          fakeAuthor={fakeAuthor}/>}
+       
     </Flex>
-    
 
   )
 }
