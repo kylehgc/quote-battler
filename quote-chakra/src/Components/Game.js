@@ -67,6 +67,7 @@ const Game = () => {
     
       <Button alignSelf='center' 
         borderRadius={30} 
+        bg='whiteAlpha.900'
         fontFamily='montserrat' 
         color='#8a4fff' 
         type='whiteAlpha' 
