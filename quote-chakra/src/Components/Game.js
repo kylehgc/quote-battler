@@ -2,27 +2,25 @@
 import { Button, Flex } from '@chakra-ui/react'
 import GameBoard from './GameBoard'
 import getGameData from '../Utils/api'
-import { useEffect, useReducer } from 'react'
+import { useEffect } from 'react'
 import useResultAnimation from '../Custom-Hooks/useResultAnimation'
-import {
-	gameDataReducer,
-	randomizeAuthors,
-	initialState,
-} from '../Utils/stateUtils'
 import Instructions from './Instructions'
 import Results from './Results'
+import useGameState from '../Custom-Hooks/useGameState'
 
 const Game = () => {
 	const WinAnimation = useResultAnimation(true)
 	const LoseAnimation = useResultAnimation(false)
-	const [gameState, gameDispatch] = useReducer(gameDataReducer, initialState)
+	const {
+		gameState: { gamePlaying, realQuote, loading, score, didWinLast },
+		gameDispatch,
+	} = useGameState()
 
 	useEffect(() => {
-		const { didWinLast } = gameState
 		if (didWinLast !== null) {
 			didWinLast ? WinAnimation() : LoseAnimation()
 		}
-	}, [gameState.realQuote])
+	}, [realQuote])
 
 	useEffect(() => {
 		const getData = async () => {
@@ -33,30 +31,13 @@ const Game = () => {
 				gameDispatch({ type: 'error', error: error })
 			}
 		}
-		if (gameState.loading) {
+		if (loading) {
 			getData()
 		}
-	}, [gameState.loading])
-
-	const { loading, realQuote, fakeQuote, didWinLast, gamePlaying, score } =
-		gameState
-
-	const authors = [realQuote.author, fakeQuote.author]
-	const currentQuote = realQuote.text
-	const randomAuthors = randomizeAuthors(authors)
+	}, [loading])
 
 	if (gamePlaying) {
-		return (
-			<GameBoard
-				loading={loading}
-				didWinLast={didWinLast}
-				currentQuote={currentQuote}
-				gameDispatch={gameDispatch}
-				quote={realQuote.text}
-				realAuthor={randomAuthors[0]}
-				fakeAuthor={randomAuthors[1]}
-			/>
-		)
+		return <GameBoard />
 	}
 
 	return (

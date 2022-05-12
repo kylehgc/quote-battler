@@ -6,10 +6,10 @@ import AuthorBox from './AuthorBox'
 import QuoteBox from './QuoteBox'
 import { motion } from 'framer-motion'
 import TouchPreview from './TouchPreview'
+import useGameState from '../Custom-Hooks/useGameState'
 
-const instructionsText = `Drag or double click the correct author to the quote. Three wrong or timer ends and you're out. Correct Answers will add five second to the timer.`
-
-const Instructions = ({ gameDispatch }) => {
+const Instructions = () => {
+	const { gameDispatch } = useGameState()
 	const largeAnimationLeft = { y: [0, -400, 0], x: [0, 100, 0] }
 	const largeAnimationRight = { y: [0, -400, 0], x: [0, -100, 0] }
 	const smallAnimationLeft = { y: [0, -300, 0, 0] }
@@ -27,7 +27,11 @@ const Instructions = ({ gameDispatch }) => {
 				height={'70%'}
 				alignItems={'center'}
 			>
-				<QuoteBox>{instructionsText}</QuoteBox>
+				<QuoteBox>
+					Drag or double click the correct author to the quote. Three wrong or
+					timer ends and you're out. Correct Answers will add five second to the
+					timer.`
+				</QuoteBox>
 			</Flex>
 
 			<Center

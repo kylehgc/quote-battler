@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Circle, Flex } from '@chakra-ui/react'
 import Lives from './Lives'
 import useCounter from '../Custom-Hooks/useCounter'
+import useGameState from '../Custom-Hooks/useGameState'
 
 const getCounterColour = (secondsLeft) => {
 	if (secondsLeft % 2 === 0 || secondsLeft > 12) {
@@ -11,21 +12,21 @@ const getCounterColour = (secondsLeft) => {
 	} else return 'red.400'
 }
 
-const ScoreBoard = ({
-	gameDispatch,
-	currentQuote,
-	didWinLast,
-	startingTimer = 30,
-}) => {
+const ScoreBoard = ({ startingTimer = 30 }) => {
 	const [score, setScore] = useState(0)
 	const [livesLeft, setLivesLeft] = useState(3)
 	const [timeLeft, setTimeLeft] = useCounter(startingTimer)
+	const {
+		gameState: { didWinLast, realQuote },
+		gameDispatch,
+	} = useGameState()
 
 	useEffect(() => {
 		if (timeLeft < 1 || livesLeft < 1) {
 			gameDispatch({ type: 'gameover', score: score })
 		}
 	})
+
 	useEffect(
 		() => {
 			if (didWinLast !== null) {
@@ -36,7 +37,7 @@ const ScoreBoard = ({
 			}
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[currentQuote],
+		[realQuote],
 	)
 
 	const counterColor = getCounterColour(timeLeft)

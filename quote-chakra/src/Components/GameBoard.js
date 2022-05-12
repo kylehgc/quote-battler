@@ -1,35 +1,21 @@
 import { Flex, Center, Spinner } from '@chakra-ui/react'
+import useGameState from '../Custom-Hooks/useGameState'
 import QuoteBoard from './QuoteBoard'
 import ScoreBoard from './ScoreBoard'
 
-const GameBoard = ({
-	didWinLast,
-	currentQuote,
-	loading,
-	quote,
-	realAuthor,
-	fakeAuthor,
-	gameDispatch,
-}) => {
+const GameBoard = () => {
+	const {
+		gameState: { loading },
+	} = useGameState()
 	return (
 		<Flex height="93vh" width="100vw" flexDirection={'column'}>
-			<ScoreBoard
-				gameDispatch={gameDispatch}
-				startingTimer={30}
-				didWinLast={didWinLast}
-				currentQuote={currentQuote}
-			/>
+			<ScoreBoard startingTimer={30} />
 			{loading ? (
 				<Center height="100%">
 					<Spinner size={'xl'} />
 				</Center>
 			) : (
-				<QuoteBoard
-					quote={quote}
-					realAuthor={realAuthor}
-					gameDispatch={gameDispatch}
-					fakeAuthor={fakeAuthor}
-				/>
+				<QuoteBoard />
 			)}
 		</Flex>
 	)

@@ -35,12 +35,6 @@ export const gameDataReducer = (state, action) => {
 	}
 }
 
-export const randomizeAuthors = (authors) => {
-	const randomAuthors = authors.slice(0)
-	randomAuthors.sort((a, b) => 0.5 - Math.random())
-	return randomAuthors
-}
-
 export const initialState = {
 	realQuote: {},
 	fakeQuote: {},

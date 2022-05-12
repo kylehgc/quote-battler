@@ -4,11 +4,13 @@ import Game from './Components/Game'
 import '@fontsource/open-sans/700.css'
 import '@fontsource/montserrat/700.css'
 import theme from './Components/extendedTheme'
-
+import { GameStateProvider } from './Custom-Hooks/useGameState'
 function App() {
 	return (
 		<ChakraProvider theme={theme}>
-			<Game />
+			<GameStateProvider>
+				<Game />
+			</GameStateProvider>
 		</ChakraProvider>
 	)
 }
